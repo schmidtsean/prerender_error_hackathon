@@ -11,10 +11,8 @@ const Product = ({ department, product }) => {
         <li>Price: {product.price}</li>
         <li>Stock: {product.stock}</li>
       </ul>
-      {/* <a href={`/products/${product.id}/reviews`}>View reviews for this product</a> */}
       <a href={`/departments/${department.id}/products/`}>back to Products from {title}</a>
       <br/>
-      <a href={`/products/${product.id}/reviews`}>Reviews</a>
     </>
   )
 }
