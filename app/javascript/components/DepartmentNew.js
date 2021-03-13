@@ -1,25 +1,25 @@
 import React from 'react';
 
 const DepartmentNew = ({ department, user }) => {
-  const { title } = department
+  const { name } = department
   const { id } = user 
-  const defaultTitle= title ? title : ""
+  const defaultName = name ? name : ""
   
   return (
     <>
-      <h1>Add Department</h1>
+      <h1>Add department</h1>
       <form action='/departments' method='post'>
-        <input type="hidden" title="department[user_id]" value={id} />
+        <input type="hidden" name="department[user_id]" value={id} />
         <input
-          placeholder="Title"
+          placeholder="name"
           type="text"
-          defaultValue={defaultTitle}
-          title="department[title]"
+          defaultValue={defaultName}
+          name="department[name]"
         />
         
         <button>
-          Add Department
-      
+          Add department
+         
         </button>
       </form>
     </>
