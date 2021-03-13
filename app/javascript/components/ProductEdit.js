@@ -17,19 +17,19 @@ const ProductEdit = ({ department, product }) => {
           type="text"
           defaultValue={defaultName}
           name="product[name]"
-        />
+        /><br/>
         <input
           placeholder="description"
           defaultValue={defaultDescription}
           type="text"
           name="product[description]"
-        />
+        /><br/>
         <input
           placeholder="price"
           defaultValue={defaultPrice}
           type="text"
           name="product[price]"
-        />
+        /><br/>
         <input
           placeholder="stock"
           defaultValue={defaultStock}

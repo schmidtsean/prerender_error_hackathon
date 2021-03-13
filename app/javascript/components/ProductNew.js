@@ -2,8 +2,11 @@ import React from 'react';
 
 const ProductNew = ({ department, product }) => {
   const { id } = department
-  const { name, errors } = product
+  const { name, description, price, stock, errors } = product
   const defaultName = name ? name : ""
+  const defaultDescription = description ? description : ""
+  const defaultPrice = price ? price : ""
+  const defaultStock = stock ? stock : ""
   return(
     <>
       <h1>New Product</h1>
@@ -15,7 +18,7 @@ const ProductNew = ({ department, product }) => {
           defaultValue={defaultName}
           type="text"
           name="product[name]"
-        />
+        /><br/>
         <textarea
           placeholder="Description"
           defaultValue={defaultDescription}
