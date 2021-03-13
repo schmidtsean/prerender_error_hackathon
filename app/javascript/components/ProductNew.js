@@ -2,11 +2,11 @@ import React from 'react';
 
 const ProductNew = ({ department, product }) => {
   const { id } = department
-  const { name, errors } = product
+  const { name, description, price, stock, errors } = product
   const defaultName = name ? name : ""
   const defaultDescription = description ? description : ""
-  const defaultPrice = price ? price : 0
-  const defaultStock = stock ? stock : 0
+  const defaultPrice = price ? price : ""
+  const defaultStock = stock ? stock : ""
   return(
     <>
       <h1>New Product</h1>
@@ -22,13 +22,13 @@ const ProductNew = ({ department, product }) => {
           placeholder="Description"
           defaultValue={defaultDescription}
           name="product[description]"
-        />
+        /><br/>
         <input
           placeholder="Price"
           defaultValue={defaultPrice}
           type="number"
           name="product[price]"
-        />
+        /><br/>
         <input
           placeholder="Stock"
           defaultValue={defaultStock}
