@@ -17,6 +17,7 @@ const Departments = ({ user, departments  }) => {
           <li key={a.id}>
             {a.name} 
           </li>
+          
         ))}
       </ul>
     </>
