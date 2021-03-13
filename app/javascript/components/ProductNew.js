@@ -1,21 +1,21 @@
 import React from 'react';
-const ProductEdit = ({ department, product }) => {
+
+const ProductNew = ({ department, product }) => {
   const { id } = department
-  const { name } = product
-  const defaultName = name ? name : "";
+  const { name, errors } = product
+  const defaultName = name ? name : ""
   const defaultDescription = description ? description: ""
   const defaultPrice = price ? price: 0.0
   const defaultStock = stock ? stock: 0
   return(
     <>
-      <h1>Edit Product</h1>
-      <form action={`/departments/${id}/products/${product.id}`} method="post">
-        <input type="hidden" name="_method" value="patch"/>
+      <h1>New Product</h1>
+      { errors && errors }
+      <form action={`/department/${id}/products`} method="post">
         <input
-          placeholder="Name"
-          required
-          type="text"
+          placeholder="name"
           defaultValue={defaultName}
+          type="text"
           name="product[name]"
         />
         <input
@@ -36,10 +36,9 @@ const ProductEdit = ({ department, product }) => {
           type="text"
           name="product[stock]"
         />
-        <button type="Submit">Update</button>
+        <button type="submit">Add Product</button>
       </form>
     </>
   )
 }
-
-export default ProductEdit;
+export default ProductNew;
