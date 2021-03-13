@@ -2,38 +2,37 @@ import React from 'react';
 
 const ProductNew = ({ department, product }) => {
   const { id } = department
-  const { name, description, price, stock, errors } = product
+  const { name, errors } = product
   const defaultName = name ? name : ""
   const defaultDescription = description ? description : ""
-  const defaultPrice = price ? price : ""
-  const defaultStock = stock ? stock : ""
+  const defaultPrice = price ? price : 0
+  const defaultStock = stock ? stock : 0
   return(
     <>
       <h1>New Product</h1>
       { errors && errors }
       <form action={`/departments/${id}/products`} method="post">
         <input
-          placeholder="name"
+          placeholder="Name"
           defaultValue={defaultName}
           type="text"
           name="product[name]"
-        /><br/>
-        <input
-          placeholder="description"
+        />
+        <textarea
+          placeholder="Description"
           defaultValue={defaultDescription}
-          type="text"
           name="product[description]"
-        /><br/>
+        />
         <input
-          placeholder="price"
+          placeholder="Price"
           defaultValue={defaultPrice}
-          type="text"
+          type="number"
           name="product[price]"
-        /><br/>
+        />
         <input
-          placeholder="stock"
+          placeholder="Stock"
           defaultValue={defaultStock}
-          type="text"
+          type="number"
           name="product[stock]"
         />
         <button type="submit">Add Product</button>
