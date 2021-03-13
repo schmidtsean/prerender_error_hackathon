@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
+  root "departments#index"
   devise_for :users
-  get '/home', to: 'static_pages#home'
+  
+  resources :departments do 
+    resources :products 
+  end
+  resources :products do
+    resources :reviews
+  end
 end
