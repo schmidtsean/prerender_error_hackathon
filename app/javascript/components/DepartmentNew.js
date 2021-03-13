@@ -3,7 +3,7 @@ import React from 'react';
 const DepartmentNew = ({ department, user }) => {
   const { title } = department
   const { id } = user 
-  const defaultTitle = title ? title : ""
+  const defaultTitle= title ? title : ""
   
   return (
     <>
@@ -14,7 +14,7 @@ const DepartmentNew = ({ department, user }) => {
           placeholder="Title"
           type="text"
           defaultValue={defaultTitle}
-          name="department[name]"
+          title="department[title]"
         />
         
         <button>

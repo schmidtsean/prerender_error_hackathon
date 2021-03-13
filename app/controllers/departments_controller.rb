@@ -45,6 +45,6 @@ end
 
 private 
   def department_params
-    params.require(:department).permit(:name)
+    params.require(:department).permit(:title)
   end
 end
