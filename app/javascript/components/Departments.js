@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import Navbar from './Navbar';
 
 const Departments = ({ user, departments  }) => {
@@ -15,9 +15,22 @@ const Departments = ({ user, departments  }) => {
       <ul>
         { departments.map( (a) => (
           <li key={a.id}>
-            {a.name} 
-          </li>
-          
+            {a.title} 
+            
+            <div>
+          <a href={`/departments/${a.id}`}>Show</a>
+          <br />
+          <a href={`/departments/${a.id}/edit`}>Edit</a>
+          <br />
+          <a
+            href={`/departments/${a.id}`}
+            data-method="delete"
+            >
+              Delete
+            </a>
+        </div>
+         
+        </li>
         ))}
       </ul>
     </>

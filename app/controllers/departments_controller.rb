@@ -7,6 +7,7 @@ class DepartmentsController < ApplicationController
 
   def show
     @department = current_user.departments.find(params[:id])
+    render component: "Department", props: { user: current_user, department: @department}
   end
 
   def new
@@ -45,6 +46,6 @@ end
 
 private 
   def department_params
-    params.require(:department).permit(:name)
+    params.require(:department).permit(:title)
   end
 end
