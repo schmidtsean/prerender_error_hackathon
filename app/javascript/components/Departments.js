@@ -1,23 +1,26 @@
 import React from 'react';
 import Navbar from './Navbar';
-const Departments = ({ user, department }) => {
-  const { name } = user
+
+const Departments = ({ user, departments  }) => {
+  const { first_name, last_name } = user
   return (
     <>
       <Navbar />
-      <h1 >Departments</h1>
-      <h2>Welcome To {`${name}`}</h2>
+      <h1>Departments</h1>
+      <h2>Welcome {`${first_name}  ${last_name}`}</h2>
       <hr />
+      <a href="/departments/new">Add New Department</a>
       <br />
       <h3>Departments</h3>
       <ul>
-        { department.map( (d) => (
-            <li key={d.id}>
-           {d.title}
+        { departments.map( (a) => (
+          <li key={a.id}>
+            {a.name} 
           </li>
         ))}
       </ul>
     </>
   )
 }
+
 export default Departments;
