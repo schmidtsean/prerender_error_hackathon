@@ -1,19 +1,19 @@
 import React from 'react';
 
 const DepartmentEdit = ({ department }) => {
-  const { name, id } = department
-  const defaultName = name ? name : "";
+  const { title, id } = department
+  const defaultTitle = title ? title : "";
   return(
     <>
-      <h1>Edit Playlist</h1>
+      <h1>Edit Department</h1>
       <form action={`/departments/${id}`} method="post">
         <input type="hidden" name="_method" value="patch" />
         <input
-          placeholder="Name"
+          placeholder="Title"
           required
           type="text"
-          defaultValue={defaultName}
-          name="department[name]"
+          defaultValue={defaultTitle}
+          name="department[title]"
         />
         <button type="Submit">Update</button>
       </form>

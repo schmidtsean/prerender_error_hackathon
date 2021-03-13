@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Department = ({ department }) => {
-  const { id, name } = department;
+  const { id, title } = department;
  
   return (
     <>
-      <h1>Department: {name}</h1>
+      <h1>Department: {title}</h1>
      
       <a href="/">back</a>
       <br />
