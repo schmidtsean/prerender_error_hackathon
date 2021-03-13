@@ -7,7 +7,7 @@ const DepartmentNew = ({ department, user }) => {
   
   return (
     <>
-      <h1>Add department</h1>
+      <h1>Add Department</h1>
       <form action='/departments' method='post'>
         <input type="hidden" name="department[user_id]" value={id} />
         <input
@@ -18,7 +18,7 @@ const DepartmentNew = ({ department, user }) => {
         />
         
         <button>
-          Add department
+          Add Department
          
         </button>
       </form>
