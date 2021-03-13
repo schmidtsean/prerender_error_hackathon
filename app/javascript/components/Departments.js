@@ -15,7 +15,7 @@ const Departments = ({ user, departments  }) => {
       <ul>
         { departments.map( (a) => (
           <li key={a.id}>
-            {a.name} 
+            {a.title} 
           </li>
           
         ))}
