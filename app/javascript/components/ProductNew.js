@@ -2,16 +2,14 @@ import React from 'react';
 
 const ProductNew = ({ department, product }) => {
   const { id } = department
-  const { name, description, price, stock, errors } = product
+  const { name, errors } = product
   const defaultName = name ? name : ""
-  const defaultDescription = description ? description : ""
-  const defaultPrice = price ? price : ""
-  const defaultStock = stock ? stock : ""
   return(
     <>
       <h1>New Product</h1>
       { errors && errors }
       <form action={`/departments/${id}/products`} method="post">
+      <input type="hidden" name="department[user_id]" value={id} />
         <input
           placeholder="Name"
           defaultValue={defaultName}

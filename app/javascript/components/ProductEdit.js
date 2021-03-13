@@ -1,7 +1,7 @@
 import React from 'react';
 const ProductEdit = ({ department, product }) => {
   const { id } = department
-  const { name } = product
+  const { name, description, price, stock } = product
   const defaultName = name ? name : "";
   const defaultDescription = description ? description: ""
   const defaultPrice = price ? price: 0.0

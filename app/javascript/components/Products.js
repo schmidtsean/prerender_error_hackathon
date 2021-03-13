@@ -19,7 +19,7 @@ const Products = ({ department, products }) => {
               <a href={`/departments/${id}/products/${product.id}/edit`}>Edit</a>
               <br />
               <a
-              href={`/department/${id}/products/${product.id}`}
+              href={`/departments/${id}/products/${product.id}`}
               data-method="delete">Delete</a>
             </div>
           </div>
