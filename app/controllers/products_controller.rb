@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    render component: 'ProductEdit', props: {department: @department, products: @product}
+    render component: 'ProductEdit', props: {department: @department, product: @product}
   end
 
   def update
