@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
-  before_action: set_department
+  before_action :set_department
   before_action :set_product, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @products = @departments.products
+    @products = @department.products
     render component: 'Products', props: { department: @department, products: @products }
   end
 
@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = @department.products.new(product_params)
+    @product = @department.products.new
     render component: 'ProductNew', props: { department: @department, product: @product }
   end
 
@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to department_products_path(@department)
     else
-      render component: 'ProductNew', props { department: @department, product: @product}
+      render component: 'ProductNew', props: { department: @department, product: @product}
     end
   end
 
